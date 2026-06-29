@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            width:500px;
+            margin:40px auto;
+        }
+
+        .card{
+            border:1px solid #ccc;
+            padding:15px;
+            margin-bottom:15px;
+            border-radius:8px;
+        }
+
+        .btn{
+            text-decoration:none;
+            padding:8px 15px;
+            color:white;
+            border-radius:5px;
+            margin-right:10px;
+            display:inline-block;
+        }
+
+        .edit{
+            background:royalblue;
+        }
+
+        .delete{
+            background:crimson;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h2>Users</h2>
+
+<% users.forEach(val=>{ %>
+
+<div class="card">
+
+    <h3><%= val.username %></h3>
+
+    <p><%= val.usermail %></p>
+
+    <a class="btn edit" href="/edit/<%= val._id %>">
+        Edit
+    </a>
+
+    <a class="btn delete" href="/delete/<%= val._id %>">
+        Delete
+    </a>
+
+</div>
+
+<% }) %>
+
+</body>
+</html>

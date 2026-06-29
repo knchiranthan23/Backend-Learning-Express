@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            width:400px;
+            margin:60px auto;
+        }
+
+        form{
+            border:1px solid #ccc;
+            padding:20px;
+            border-radius:8px;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+            box-sizing:border-box;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background:green;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h2>Edit User</h2>
+
+<form action="/update/<%= singleUser._id %>" method="POST">
+
+    <input
+        type="text"
+        name="username"
+        value="<%= singleUser.username %>"
+        required
+    >
+
+    <input
+        type="email"
+        name="usermail"
+        value="<%= singleUser.usermail %>"
+        required
+    >
+
+    <button type="submit">
+        Update User
+    </button>
+
+</form>
+
+</body>
+</html>
